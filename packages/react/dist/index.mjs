@@ -36,8 +36,7 @@ var colors = {
   ignite300: "#00B37E",
   ignite500: "#00875F",
   ignite700: "#015F43",
-  ignite900: "#00291D",
-  test: "#fff"
+  ignite900: "#00291D"
 };
 var space = {
   1: "0.25rem",
@@ -112,15 +111,106 @@ var { config, createTheme, css, globalCss, keyframes, styled, theme } = createSt
   }
 });
 
-// src/index.tsx
-var Button = styled("button", {
-  backgroundColor: "$ignite500",
-  color: "$gray100",
-  fontWeight: "$medium",
+// components/Box.tsx
+var Box = styled("div", {
+  padding: "$4",
   borderRadius: "$md",
-  border: 0,
-  padding: "$4"
+  backgroundColor: "$gray800",
+  border: "solid 1px $gray600"
 });
+
+// components/Text.tsx
+var Text = styled("p", {
+  fontFamily: "$default",
+  lineHeight: "$base",
+  margin: 0,
+  color: "$gray100",
+  variants: {
+    size: {
+      xxs: { fontSize: "$xxs" },
+      xs: { fontSize: "$xs" },
+      sm: { fontSize: "$sm" },
+      md: { fontSize: "$md" },
+      lg: { fontSize: "$lg" },
+      xl: { fontSize: "$xl" },
+      "2xl": { fontSize: "$2xl" },
+      "4xl": { fontSize: "$4xl" },
+      "5xl": { fontSize: "$5xl" },
+      "6xl": { fontSize: "$6xl" },
+      "7xl": { fontSize: "$7xl" },
+      "8xl": { fontSize: "$8xl" },
+      "9xl": { fontSize: "$9xl" }
+    }
+  },
+  defaultVariants: {
+    size: "md"
+  }
+});
+
+// components/Heading.tsx
+var Heading = styled("h2", {
+  fontFamily: "$default",
+  lineHeight: "$base",
+  margin: 0,
+  color: "$gray100",
+  variants: {
+    size: {
+      sm: { fontSize: "$xl" },
+      md: { fontSize: "$2xl" },
+      lg: { fontSize: "$4xl" },
+      "2xl": { fontSize: "$5xl" },
+      "3xl": { fontSize: "$6xl" },
+      "4xl": { fontSize: "$7xl" },
+      "5xl": { fontSize: "$8xl" },
+      "6xl": { fontSize: "$9xl" }
+    }
+  },
+  defaultVariants: {
+    size: "md"
+  }
+});
+
+// components/Avatar/styles.ts
+import * as Avatar from "@radix-ui/react-avatar";
+var AvatarContainer = styled(Avatar.Root, {
+  overflow: "hidden",
+  height: "$12",
+  width: "$12",
+  borderRadius: "$full",
+  display: "inline-block"
+});
+var AvatarImage = styled(Avatar.Image, {
+  height: "100%",
+  width: "100%",
+  borderRadius: "inherit",
+  objectFit: "cover"
+});
+var AvatarFallback = styled(Avatar.Fallback, {
+  height: "100%",
+  width: "100%",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  backgroundColor: "$gray800",
+  color: "$gray600",
+  svg: {
+    height: "$6",
+    width: "$6"
+  }
+});
+
+// components/Avatar/index.tsx
+import { User } from "phosphor-react";
+import { jsx, jsxs } from "react/jsx-runtime";
+function Avatar2(props) {
+  return /* @__PURE__ */ jsxs(AvatarContainer, { children: [
+    /* @__PURE__ */ jsx(AvatarImage, __spreadValues({}, props)),
+    /* @__PURE__ */ jsx(AvatarFallback, { delayMs: 600, children: /* @__PURE__ */ jsx(User, {}) })
+  ] });
+}
 export {
-  Button
+  Avatar2 as Avatar,
+  Box,
+  Heading,
+  Text
 };
