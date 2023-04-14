@@ -67,7 +67,14 @@ __export(src_exports, {
   MultiStep: () => MultiStep,
   Text: () => Text,
   TextInput: () => TextInput,
-  Textarea: () => Textarea
+  Textarea: () => Textarea,
+  config: () => config,
+  createTheme: () => createTheme,
+  css: () => css,
+  globalCss: () => globalCss,
+  keyframes: () => keyframes,
+  styled: () => styled,
+  theme: () => theme
 });
 module.exports = __toCommonJS(src_exports);
 
@@ -166,7 +173,7 @@ var { config, createTheme, css, globalCss, keyframes, styled, theme } = (0, impo
 
 // components/Box.tsx
 var Box = styled("div", {
-  padding: "$4",
+  padding: "$6",
   borderRadius: "$md",
   backgroundColor: "$gray800",
   border: "solid 1px $gray600"
@@ -230,8 +237,8 @@ Heading.displayName = "Heading";
 var Avatar = __toESM(require("@radix-ui/react-avatar"));
 var AvatarContainer = styled(Avatar.Root, {
   overflow: "hidden",
-  height: "$12",
-  width: "$12",
+  height: "$16",
+  width: "$16",
   borderRadius: "$full",
   display: "inline-block"
 });
@@ -282,8 +289,15 @@ var Button = styled("button", {
   gap: "$2",
   padding: "0 $4",
   cursor: "pointer",
+  svg: {
+    width: "$4",
+    height: "$4"
+  },
   "&:disabled": {
     cursor: "not-allowed"
+  },
+  "&:focus": {
+    boxShadow: "0, 0, 0 2px $colors$gray100"
   },
   variants: {
     variant: {
@@ -335,6 +349,9 @@ var Button = styled("button", {
 });
 Button.displayName = "Button";
 
+// components/TextInput/index.tsx
+var import_react2 = require("react");
+
 // components/TextInput/styles.ts
 var TextInputContainer = styled("div", {
   backgroundColor: "$gray900",
@@ -343,7 +360,17 @@ var TextInputContainer = styled("div", {
   boxSizing: "border-box",
   border: "1px solid $gray900",
   display: "flex",
-  alignItems: "baseline",
+  alignItems: "center",
+  variants: {
+    size: {
+      sm: {
+        padding: "$2 $3"
+      },
+      md: {
+        padding: "$3 $4"
+      }
+    }
+  },
   "&:focus-within": {
     borderColor: "$ignite300"
   },
@@ -354,11 +381,14 @@ var TextInputContainer = styled("div", {
     borderColor: "$ignite300",
     opacity: 0.5,
     cursor: "not-allowed"
-  }
+  },
   // "&:has(input:disabled)": {
   //   opacity: 0.5,
   //   cursor: "not-allowed",
   // },
+  defaultVariants: {
+    size: "md"
+  }
 });
 var Prefix = styled("span", {
   fontFamily: "$default",
@@ -378,19 +408,24 @@ var Input = styled("input", {
   height: "100%",
   "&:disabled": {
     cursor: "not-allowed"
+  },
+  "&::placeholder": {
+    color: "$gray400"
   }
 });
 
 // components/TextInput/index.tsx
 var import_jsx_runtime2 = require("react/jsx-runtime");
-function TextInput(_a) {
-  var _b = _a, { prefix } = _b, rest = __objRest(_b, ["prefix"]);
-  const hasDisabled = rest.disabled;
-  return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(TextInputContainer, { className: hasDisabled ? "disabled" : "", children: [
-    !!prefix && /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Prefix, { children: prefix }),
-    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Input, __spreadValues({}, rest))
-  ] });
-}
+var TextInput = (0, import_react2.forwardRef)(
+  (_a, ref) => {
+    var _b = _a, { prefix } = _b, rest = __objRest(_b, ["prefix"]);
+    const hasDisabled = rest.disabled;
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(TextInputContainer, { className: hasDisabled ? "disabled" : "", children: [
+      !!prefix && /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Prefix, { children: prefix }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Input, __spreadValues({ ref }, rest))
+    ] });
+  }
+);
 TextInput.displayName = "TextInput";
 
 // components/Textarea.tsx
@@ -415,7 +450,7 @@ var Textarea = styled("textarea", {
   // "&:has(input:focus)": {
   //   borderColor: "$ignite300",
   // },
-  "&:placeholder": {
+  "&::placeholder": {
     color: "$gray400"
   },
   "&:disabled": {
@@ -446,7 +481,7 @@ var CheckboxContainer = styled(Checkbox.Root, {
   justifyContent: "center",
   alignItems: "center",
   border: "2px solid $gray900",
-  "&:focus": {
+  "&:focus, &[data-state='checked']": {
     border: "2px solid $ignite300"
   },
   "&[data-state='checked']": {
@@ -542,5 +577,12 @@ MultiStep.displayName = "MultiStep";
   MultiStep,
   Text,
   TextInput,
-  Textarea
+  Textarea,
+  config,
+  createTheme,
+  css,
+  globalCss,
+  keyframes,
+  styled,
+  theme
 });

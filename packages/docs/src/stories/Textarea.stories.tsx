@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Box, Text, TextareaProps, Textarea } from "@ui/react";
+import { Box, Text, TextareaProps, Textarea } from "@components-ui/react";
 import React from "react";
 
 export default {

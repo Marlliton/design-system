@@ -1,5 +1,5 @@
 {
-  "name": "@ui/docs",
+  "name": "@components-ui/docs",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Marlliton Souza",
@@ -21,10 +21,10 @@
   },
   "dependencies": {
     "@storybook/storybook-deployer": "^2.8.16",
-    "@ui/eslint-config": "*",
-    "@ui/react": "*",
-    "@ui/tokens": "*",
-    "@ui/ts-config": "*",
+    "@components-ui/eslint-config": "*",
+    "@components-ui/react": "*",
+    "@components-ui/tokens": "*",
+    "@components-ui/ts-config": "*",
     "phosphor-react": "^1.4.1",
     "polished": "^4.2.2",
     "react": "^18.2.0",

@@ -7,7 +7,18 @@ export const TextInputContainer = styled("div", {
   boxSizing: "border-box",
   border: "1px solid $gray900",
   display: "flex",
-  alignItems: "baseline",
+  alignItems: "center",
+
+  variants: {
+    size: {
+      sm: {
+        padding: "$2 $3",
+      },
+      md: {
+        padding: "$3 $4",
+      },
+    },
+  },
 
   "&:focus-within": {
     borderColor: "$ignite300",
@@ -27,6 +38,10 @@ export const TextInputContainer = styled("div", {
   //   opacity: 0.5,
   //   cursor: "not-allowed",
   // },
+
+  defaultVariants: {
+    size: "md",
+  },
 });
 export const Prefix = styled("span", {
   fontFamily: "$default",
@@ -39,13 +54,17 @@ export const Input = styled("input", {
   fontSize: "$sm",
   color: "$white",
   fontWeight: "$regular",
-  background:"transparent",
+  background: "transparent",
   border: 0,
   outline: 0,
   width: "100%",
   height: "100%",
 
   "&:disabled": {
-    cursor: "not-allowed"
+    cursor: "not-allowed",
+  },
+
+  "&::placeholder": {
+    color: "$gray400"
   }
 });

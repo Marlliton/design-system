@@ -1,4 +1,4 @@
 {
-  "extends": "@ui/ts-config/react.json",
+  "extends": "@components-ui/ts-config/react.json",
   "include": ["src"]
 }

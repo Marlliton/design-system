@@ -1,6 +1,6 @@
 {
-  "name": "@ui/react",
-  "version": "1.0.0",
+  "name": "@components-ui/react",
+  "version": "2.0.1",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -14,9 +14,9 @@
   "devDependencies": {
     "@types/react": "^18.0.33",
     "@types/react-dom": "^18.0.11",
-    "@ui/eslint-config": "*",
-    "@ui/tokens": "*",
-    "@ui/ts-config": "*",
+    "@components-ui/eslint-config": "*",
+    "@components-ui/tokens": "*",
+    "@components-ui/ts-config": "*",
     "react": "^18.2.0",
     "tsup": "^6.7.0",
     "typescript": "^5.0.4"

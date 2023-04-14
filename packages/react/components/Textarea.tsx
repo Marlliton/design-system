@@ -27,7 +27,7 @@ export const Textarea = styled("textarea", {
   //   borderColor: "$ignite300",
   // },
 
-  "&:placeholder": {
+  "&::placeholder": {
     color: "$gray400"
   },
 

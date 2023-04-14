@@ -7,7 +7,7 @@ import {
   lineHeights,
   radii,
   space,
-} from '@ui/tokens'
+} from '@components-ui/tokens'
 
 export const { config, createTheme, css, globalCss, keyframes, styled, theme } =
   createStitches({

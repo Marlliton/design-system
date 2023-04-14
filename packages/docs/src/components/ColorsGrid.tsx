@@ -1,4 +1,4 @@
-import { colors } from "@ui/tokens";
+import { colors } from "@components-ui/tokens";
 import { getContrast } from "polished";
 
 export function ColorsGrid() {

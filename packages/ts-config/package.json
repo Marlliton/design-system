@@ -1,6 +1,6 @@
 {
-  "name": "@ui/ts-config",
-  "version": "1.0.0",
+  "name": "@components-ui/ts-config",
+  "version": "1.1.1",
   "author": "Marlliton Souza",
   "license": "MIT",
   "private": true
