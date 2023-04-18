@@ -1,6 +1,6 @@
 {
   "name": "@components-ui/react",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -12,11 +12,11 @@
     "lint": "eslint src/**/*.ts* --fix"
   },
   "devDependencies": {
-    "@types/react": "^18.0.33",
-    "@types/react-dom": "^18.0.11",
     "@components-ui/eslint-config": "*",
     "@components-ui/tokens": "*",
     "@components-ui/ts-config": "*",
+    "@types/react": "^18.0.33",
+    "@types/react-dom": "^18.0.11",
     "react": "^18.2.0",
     "tsup": "^6.7.0",
     "typescript": "^5.0.4"
@@ -24,6 +24,8 @@
   "dependencies": {
     "@radix-ui/react-avatar": "^1.0.2",
     "@radix-ui/react-checkbox": "^1.0.3",
+    "@radix-ui/react-toast": "^1.1.3",
+    "@radix-ui/react-tooltip": "^1.0.5",
     "@stitches/react": "^1.2.8",
     "phosphor-react": "^1.4.1"
   }

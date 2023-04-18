@@ -1,5 +1,11 @@
 # @components-ui/react
 
+## 2.0.2
+
+### Patch Changes
+
+- Feature: Tooltip and Toast created
+
 ## 2.0.1
 
 ### Patch Changes
